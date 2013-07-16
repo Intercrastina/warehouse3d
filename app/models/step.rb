@@ -1,5 +1,5 @@
 class Step < ActiveRecord::Base
-  # attr_accessible :title, :body
-
   belongs_to :assembly
+  has_many :pieces
+  has_many :extras
 end
