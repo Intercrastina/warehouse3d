@@ -4,7 +4,7 @@ class CreateAssemblies < ActiveRecord::Migration
       t.string :name
       t.integer :printing_time
       t.integer :printing_cost
-      t.text :descriptions
+      t.text :description
       t.timestamps
     end
   end
