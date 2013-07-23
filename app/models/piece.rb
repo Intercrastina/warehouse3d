@@ -1,19 +1,16 @@
 # == Schema Information
 #
-# Table name: steps
+# Table name: pieces
 #
 #  id          :integer          not null, primary key
-#  order       :integer
+#  name        :string(255)
 #  description :text
 #  assembly_id :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
 
-class Step < ActiveRecord::Base
+class Piece < ActiveRecord::Base
   belongs_to :assembly
-  has_many :pieces
-  has_many :extras
-  validates :description, presence: true, length: { minimum: 10 }
-  validates :order, presence: true, numericality: true
+  validates :name, :description, presence: true, length: { minimum: 4 }
 end

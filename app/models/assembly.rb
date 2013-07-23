@@ -6,7 +6,7 @@
 #  name          :string(255)
 #  printing_time :integer
 #  printing_cost :integer
-#  descriptions  :text
+#  description   :text
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #
@@ -20,5 +20,5 @@ class Assembly < ActiveRecord::Base
   validates_associated :pieces, :steps
 end
 
-Assembly.create(name:"Aircraft1").valid? #=> true
-Assembly.create(name: nil).valid? # => false
+# Assembly.create(name:"Aircraft1").valid? #=> true
+# Assembly.create(name: nil).valid? # => false
