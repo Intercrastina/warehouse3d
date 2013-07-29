@@ -12,8 +12,11 @@
 
 class Step < ActiveRecord::Base
   belongs_to :assembly
+
   has_many :pieces
   has_many :extras
+  has_many :step_links
+
   validates :description, presence: true, length: { minimum: 10 }
   validates :order, presence: true, numericality: true
 end
