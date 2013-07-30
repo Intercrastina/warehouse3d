@@ -12,6 +12,8 @@
 #
 
 class Assembly < ActiveRecord::Base
+  attr_accessible :name, :printing_cost, :printing_time, :description
+
   has_many :steps
   has_many :pieces
   validates :name, presence: true, length: { minimum: 3}
@@ -20,5 +22,5 @@ class Assembly < ActiveRecord::Base
   validates_associated :pieces, :steps
 end
 
-# Assembly.create(name:"Aircraft1").valid? #=> true
+# Assembly.create(name:"Aircraft1", description: "Wadus").valid? #=> true
 # Assembly.create(name: nil).valid? # => false

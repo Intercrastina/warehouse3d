@@ -1,0 +1,15 @@
+<%= error_messages_for @assembly %>
+
+<%= form_for @assembly do |f| %>
+	<%= f.label :name, "Name" %>
+	<%= f.text_field :name %>
+	<%= f.label :description, "Description" %>
+	<%= f.text_area :description %>
+	<%= f.label :printing_time, "Printing Time (min)" %>
+	<%= f.text_field :printing_time %>
+	<%= f.label :printing_cost, "Printing Cost (€/$)" %>
+	<%= f.text_field :printing_cost %>
+
+	<%= f.submit "Save" %>
+
+<% end %>

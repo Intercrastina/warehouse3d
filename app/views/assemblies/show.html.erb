@@ -3,3 +3,10 @@
 <p><%= @assembly.printing_time %></p>
 <p><%= @assembly.printing_cost %></p>
 
+<div id="pieces">
+	<ul>
+	<% @assembly.pieces.each do |piece| %>
+		<li><%= piece.name %> : <%= truncate(piece.description, length: 140) %></li>
+	<% end %>
+    </ul>
+</div>

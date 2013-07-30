@@ -1,6 +1,6 @@
 Warehousese3d::Application.routes.draw do
 
-  match 'assemblies/:id' => 'assemblies#show'
+  resources :assemblies
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(:version => 20130723173736) do
     t.string   "name"
     t.integer  "printing_time"
     t.integer  "printing_cost"
-    t.text     "descriptions"
+    t.text     "description"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
