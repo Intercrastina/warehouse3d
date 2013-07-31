@@ -22,5 +22,5 @@ class Assembly < ActiveRecord::Base
   validates_associated :pieces, :steps
 end
 
-# Assembly.create(name:"Aircraft1", description: "Wadus").valid? #=> true
+# Assembly.create(name:"Aircraft1", description: "Wadus")
 # Assembly.create(name: nil).valid? # => false
