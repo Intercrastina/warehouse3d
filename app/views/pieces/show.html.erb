@@ -3,7 +3,6 @@
 
 <div id="pieces">
 	<ul>
-	<% @pieces.each do |piece| %>
 		<li><%= piece.name %> : <%= truncate(piece.description, length: { minimum: 4 }) %></li>
 	<% end %>
     </ul>
