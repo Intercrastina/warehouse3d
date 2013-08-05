@@ -1,7 +1,8 @@
-Warehousese3d::Application.routes.draw do
+Warehouse3d::Application.routes.draw do
 
   resources :assemblies
   resources :pieces
+  resources :steps
 
   
   # The priority is based upon order of creation:
