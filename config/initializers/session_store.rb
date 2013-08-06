@@ -1,6 +1,6 @@
 # Be sure to restart your server when you modify this file.
 
-Warehousese3d::Application.config.session_store :cookie_store, key: '_warehousese3d_session'
+Warehouse3d::Application.config.session_store :cookie_store, key: '_warehousese3d_session'
 
 # Use the database for sessions instead of the cookie-based default,
 # which shouldn't be used to store highly confidential information

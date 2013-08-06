@@ -1,23 +1,26 @@
 class PiecesController < ApplicationController
 
 	def new
-		@piece = Piece.new
+    @assembly = Assembly.find(params[:assembly_id])
+		@piece = @assembly.pieces.new
 	end
 
 	def show
-		@piece = Piece.find(params[:id])
+    @assembly = Assembly.find(params[:assembly_id])
+		@piece = @assembly.pieces.find(params[:id])
 	end
 
 	def create
-		@piece = Piece.new params[:piece]
+    @assembly = Assembly.find(params[:assembly_id])
+		@piece = @assembly.pieces.new params[:piece]
 		if @piece.save
-			redirect_to piece_path(@piece), notice: "Your 3D printing parts has been successfully created."
+			redirect_to assembly_piece_path(@assembly, @piece), notice: "Your 3D printing parts has been successfully created."
 		else
 			render 'new'
 		end
 	end
 
 	def index 
-		redirect_to order_piece_path(@piece.id])
+    redirect_to assembly_piece_path(@assembly, @piece)
 	end
 end

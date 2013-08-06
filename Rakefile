@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Warehousese3d::Application.load_tasks
+Warehouse3d::Application.load_tasks

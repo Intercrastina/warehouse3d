@@ -1,7 +1,9 @@
 Warehouse3d::Application.routes.draw do
 
-  resources :assemblies
-  resources :pieces
+  resources :assemblies do
+    resources :pieces
+  end
+
   resources :steps
 
   

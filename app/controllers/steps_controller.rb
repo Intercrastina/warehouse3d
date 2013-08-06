@@ -5,19 +5,19 @@ class StepsController < ApplicationController
 	end
 
 	def show
-		@step = Step.find(pieces[:id], extras)
+		@step = Step.find(pieces[:id])
 	end
 
 	def create
-		@step = Step.new params[:id, :step_link]
+		@step = Step.new params[:step]
 		if @step.save
-			redirect_to step_link_path(@step), notice: "Step created."
+			redirect_to step_path(@step), notice: "Step created."
 		else
 			render 'new'
 		end
 	end
 
 	def index 
-		redirect_to order_step_path(@step.id])
+		redirect_to step_path(@step.id)
 	end
 end

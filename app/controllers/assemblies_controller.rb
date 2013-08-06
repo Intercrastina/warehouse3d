@@ -11,13 +11,13 @@ class AssembliesController < ApplicationController
 	def create
 		@assembly = Assembly.new params[:assembly]
 		if @assembly.save
-			redirect_to assembly_path(@assembly), notice: "Your object has been successfully created."
+			redirect_to new_assembly_piece_path(@assembly), notice: "Your object has been successfully created."
 		else
 			render 'new'
 		end
 	end
 
 	def index 
-		redirect_to order_assembly_path(@assembly.id)
+		redirect_to assembly_path(@assembly)
 	end
 end

@@ -11,6 +11,8 @@
 #
 
 class Step < ActiveRecord::Base
+  attr_accessible :order, :description
+
   belongs_to :assembly
 
   has_many :pieces

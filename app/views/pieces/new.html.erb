@@ -1,6 +1,6 @@
 <%= error_messages_for @piece %>
 
-<%= form_for @piece do |f| %>
+<%= form_for [@assembly, @piece] do |f| %>
 	<%= f.label :name, "Name" %>
 	<%= f.text_field :name %>
 	<%= f.label :description, "Description" %>

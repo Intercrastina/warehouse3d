@@ -2,4 +2,4 @@
 require File.expand_path('../application', __FILE__)
 
 # Initialize the rails application
-Warehousese3d::Application.initialize!
+Warehouse3d::Application.initialize!

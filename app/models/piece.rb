@@ -11,6 +11,8 @@
 #
 
 class Piece < ActiveRecord::Base
+  attr_accessible :name, :description
+
   belongs_to :assembly
   validates :name, :description, presence: true, length: { minimum: 4 }
 end

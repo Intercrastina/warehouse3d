@@ -12,6 +12,8 @@
 #
 
 class Extra < ActiveRecord::Base
+  attr_accessible :name, :description, :cost
+
   belongs_to :step
   validates :name, :description, presence: true, length: { minimum: 4 }
   validates :cost, numericality: true , allow_blank: true 
