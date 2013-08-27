@@ -1,10 +1,8 @@
 Warehouse3d::Application.routes.draw do
 
-  resources :assemblies do
-    resources :pieces
-  end
-
-  resources :steps
+map.resources :assemblies do |assemblies|
+  assemblies.resources :pieces , :steps
+end
 
   
   # The priority is based upon order of creation:

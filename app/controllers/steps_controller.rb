@@ -1,23 +1,26 @@
 class StepsController < ApplicationController
 
 	def new
-		@step = Step.new
+	@assembly = Assembly.find(params[:assembly_id])
+		@step = @assembly.pieces.new
 	end
 
 	def show
-		@step = Step.find(pieces[:id])
+	@assembly = Assembly.find(params[:assembly_id])
+		@step = @assembly.steps.find(params[:id])
 	end
 
 	def create
-		@step = Step.new params[:step]
+	@assembly = Assembly.find(params[:assembly_id])
+		@step = @assembly.steps.new params[:step]
 		if @step.save
-			redirect_to step_path(@step), notice: "Step created."
+			redirect_to assembly_step_path(@assembly, @step), notice: "Step created."
 		else
 			render 'new'
 		end
 	end
 
 	def index 
-		redirect_to step_path(@step.id)
+		redirect_to assembly_step_path(@assembly, @step.id)
 	end
 end
