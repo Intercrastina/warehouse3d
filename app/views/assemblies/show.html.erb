@@ -1,12 +1,22 @@
 <h1><%= @assembly.name %></h1>
-<h3><%= @assembly.description %></h3>
-<p><%= @assembly.printing_time %></p>
-<p><%= @assembly.printing_cost %></p>
+<p><%= @assembly.description %></p>
+<p><%= pluralize(@assembly.printing_time, 'minute') %></p>
+<p><%= pluralize(@assembly.printing_cost, 'euro') %></p>
 
 <div id="pieces">
+	<h4>Pieces</h4>
 	<ul>
 	<% @assembly.pieces.each do |piece| %>
 		<li><%= piece.name %> : <%= truncate(piece.description, length: 140) %></li>
 	<% end %>
     </ul>
 </div>
+<div id="steps">
+	<h4>Steps</h4>
+	<ul>
+	<% @assembly.steps.each do |step| %>
+		<li><%= step.order %> : <%= truncate(step.description, length: 140) %></li>
+	<% end %>
+    </ul>
+</div>
+

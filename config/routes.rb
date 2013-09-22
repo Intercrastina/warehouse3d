@@ -1,7 +1,7 @@
 Warehouse3d::Application.routes.draw do
 
-map.resources :assemblies do |assemblies|
-  assemblies.resources :pieces , :steps
+resources :assemblies do 
+  resources :pieces , :steps
 end
 
   

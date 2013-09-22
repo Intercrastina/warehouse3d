@@ -2,7 +2,7 @@ class StepsController < ApplicationController
 
 	def new
 	@assembly = Assembly.find(params[:assembly_id])
-		@step = @assembly.pieces.new
+		@step = @assembly.steps.new
 	end
 
 	def show
@@ -14,7 +14,7 @@ class StepsController < ApplicationController
 	@assembly = Assembly.find(params[:assembly_id])
 		@step = @assembly.steps.new params[:step]
 		if @step.save
-			redirect_to assembly_step_path(@assembly, @step), notice: "Step created."
+			redirect_to new_assembly_step_path(@assembly), notice: "Step created."
 		else
 			render 'new'
 		end

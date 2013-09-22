@@ -18,6 +18,19 @@ class AssembliesController < ApplicationController
 	end
 
 	def index 
-		redirect_to assembly_path(@assembly)
+		@assemblies = Assembly.order("created_at desc").limit(50)
+	end
+
+	def edit
+		@assembly = Assembly.find(params[:id])
+	end
+
+	def update
+		@assembly = Assembly.find(params[:id])
+		if @assembly.update_attributes  params[:assembly]
+			redirect_to assembly_path(@assembly)
+		else 
+			render 'edit'
+		end
 	end
 end

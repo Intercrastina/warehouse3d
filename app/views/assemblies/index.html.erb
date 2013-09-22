@@ -1,0 +1,9 @@
+
+<% @assemblies.each do |assembly| %>
+<div class="assembly">
+	<h2><%= link_to(assembly.name, assembly_path(assembly.id)) %></h2>
+	<p><%= assembly.description %></p>
+	<p><%= assembly.printing_time %></p>
+	<p><%= assembly.printing_cost %></p>
+</div>
+<% end %>

@@ -14,7 +14,7 @@ class PiecesController < ApplicationController
     @assembly = Assembly.find(params[:assembly_id])
 		@piece = @assembly.pieces.new params[:piece]
 		if @piece.save
-			redirect_to assembly_piece_path(@assembly, @piece), notice: "Your 3D printing parts has been successfully created."
+			redirect_to new_assembly_piece_path(@assembly), notice: "Your 3D printing parts has been successfully created."
 		else
 			render 'new'
 		end
